@@ -50,8 +50,10 @@
     - git restore note.md, 取消變動
     - git checkout note.md, 恢復修改
 
-  - 將檔案加入倉庫區 Staging Area(index) -> Git Re
-    - git commit
+  - 將檔案加入倉庫區 Staging Area(index) -> Git Repository
+    - git commit -m "first commit", '-m'代表'Modify', 引號""中可以寫上註解, 例如"新增輸出功能"
+    - 查看倉庫commit object
+      - '.git/refs/heads'資料夾下, 'master'為主分支
   
 
 
@@ -59,7 +61,7 @@
     - git status
     - 在'Changes to be commited'下的檔案代表在暫存區中
   
-
+- last viewed time : 02:10:39
 
 - VsCode
   - 檢視隱藏目錄
