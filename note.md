@@ -27,6 +27,11 @@
   - 產生新檔案
     - echo note > note.md
 
+  - 刪除後可以使用
+    - git restore 進行恢復
+    - git add     進行確認
+    - git commit  進行版本提交
+
   - 樹狀模式
     - tree.git, 另外可以使用'tree /F .git'查看詳細資訊
   
@@ -55,13 +60,51 @@
     - 查看倉庫commit object
       - '.git/refs/heads'資料夾下, 'master'為主分支
   
+  - git commit -am 
+    - 檔案需要曾經被加入倉庫(commit)
+    - 可以直接commit, 使用am -> (git add <filename> + git commit -m) # 等同於兩者一起使用
 
+  - 修改最後一次的commit
+    - Message寫錯
+    - git commit --amend
+    - 不會重新提交新的commit
+    - 使用Vim的方式編輯
 
   - 查看git狀態
     - git status
-    - 在'Changes to be commited'下的檔案代表在暫存區中
+      - 在'Changes to be commited'下的檔案代表在暫存區中
+    - git log
+      - 查看commit狀態
+      - git log 2, 一次查看兩筆紀錄
+      - git log --graph, 
+      - git log --oneline, 每次對應的紀錄只印出一行
+      - git log --before='2021-09-15', 印出輸入時間前的紀錄
+      - git shortlog, 僅以註解方式印出紀錄
+
+  - git 文件的狀態
+    - untracked(U)
+      - 工作區新創建, 未加入站存區
+    - staged(A)
+      - 已加入暫存區(使用add指令)
+    - modified(M)
+      - 已加入暫存區(但後續有修改)
+    - deleted(D)
+      - 刪除的檔案
   
-- last viewed time : 02:10:39
+- Linux內建的編輯器Vim
+  - git commit
+    - 'Esc' -> 切換normal/insert
+    - syn off -> 關閉紅色高亮模式
+    - :w  -> 代表寫入、儲存
+    - :q  -> 代表離開程式
+    - :!  -> 代表強制執行
+    - :q! -> 回到上一個動作
+    - i   -> insert
+    - a   -> append
+    - o   -> new line
+
+
+- last viewed 2:46
 
 - VsCode
   - 檢視隱藏目錄
