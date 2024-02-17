@@ -164,8 +164,10 @@
 - last viewed lesson 2 02:24:42
 
 - GitHub
-  - git remote/push
-  - git 
+  - git remote add origin https://github.com/pylin0219/git-demo.git, 將檔案與GitHub同步
+  - git remote -v
+    - 檢視目前所有遠端url
+  - git push -u origin master ,上傳
 
 - VsCode
   - 檢視隱藏目錄
