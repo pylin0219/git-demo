@@ -127,10 +127,45 @@
   - git checkout -b 分支名稱, 建立&切換分支一次完成
   - git branch -m 舊分支名稱 新分支名稱, 修改分支名稱
 
-- git checkout
-  - git checkout commit-
+- git checkout 切換到任何commit上 用以回去看過去的code & 修改(需要建立分支)
+  - git checkout commit-object(6位 sha1編碼)
+    - git checkout master, 回到主分支
+  - 將修改的程式碼合併
+    - git branch dev, 創建一個新分支
+    - git checkout dev, 切換到該分支(在切換到的commit)
+    - git add .
+    - git commit -m "修改內容"
+    - git checkout master
+    - git merge dev, 合併分支
+      - 文件上方 Accept Current Change(保持原樣) | Accept Incoming Change(加入修改) | Accept Both Changes | Compare Changes
+      - git status 會顯示unmerged, 再使用 git add .保存, git commit -m "修改內容" 
+    - git add .
+    - git commit -m "merge dev", 合併到主分支後要記得再add/commit來將變更儲存到主分支內
+    - git branch -D dev, 刪除分支
+  - 取得目前所有commit-object
+    - git reflog
+    - git reflog (checkout) commit-object
+  - 真正恢復到過去的commit, 切換master指針(放棄不要的commit-object)
+    - commit太多需要整理、某一個commit是比較合適的版本、修改太多但都沒有最新commit版本好
+    - git reset <commit-object>
+    - mixed(預設)/soft/hard
+    - git reset --hard commit-object, 新的變更會全部消失
+      - git reset --hard HEAD, 恢復到最新的commit
+      - git reset --hard HEAD~1, 恢復道上一個commit
+      - gir reset ORIG_HEAD
+      - git reset --hard ORIG_HEAD, 恢復到reset前的commit-object(一般就是指原master)
+    - git reset commit-object, 會保留新的變更(變更不會加入暫存區)
+    - git reset --soft commit-object, 變更會加入暫存區
+    - git reset --mixed commit-object (預設模式)
+      - A->U
+    - git reflog
+      - git reset (checkout) commit-object, 恢復commit
 
-- last viewed lesson 2
+- last viewed lesson 2 02:24:42
+
+- GitHub
+  - git remote/push
+  - git 
 
 - VsCode
   - 檢視隱藏目錄
