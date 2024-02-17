@@ -27,11 +27,6 @@
   - 產生新檔案
     - echo note > note.md
 
-  - 刪除後可以使用
-    - git restore 進行恢復
-    - git add     進行確認
-    - git commit  進行版本提交
-
   - 樹狀模式
     - tree.git, 另外可以使用'tree /F .git'查看詳細資訊
   
@@ -50,6 +45,14 @@
       - git ls-files, 查看所有檔案
       -     ls-files -s, 查看index對應的sha1編碼檔案
 
+ - 刪除後可以使用
+    - git restore 進行恢復
+    - git add     進行確認
+    - git commit  進行版本提交
+
+  - 將檔案從暫存區移除到工作區 Staging Area(index) -> Working directory
+    - git restore --staged note.md
+
   - 暫存區
     - git add note.md, 更新修改內容到暫存區
     - git restore note.md, 取消變動
@@ -63,6 +66,18 @@
   - git commit -am 
     - 檔案需要曾經被加入倉庫(commit)
     - 可以直接commit, 使用am -> (git add <filename> + git commit -m) # 等同於兩者一起使用
+
+  - 在暫存區/倉庫區刪除的恢復
+    - git restore note.md
+
+  - 將檔案從倉庫區(也可以從暫存區)移除到工作區 Gir Repository -> Working Directory (Untracked)
+    - git rm --cached note.md (檔案將變回'U')
+    - 從倉庫區移除到工作區
+      - git rm note.md
+        - 使用rm刪除, 想要恢復跟確認需要先unstage
+        - git restore --staged note.md, 恢復到工作區
+          - git restore, 恢復
+          - git add, 確認
 
   - 修改最後一次的commit
     - Message寫錯
@@ -103,8 +118,19 @@
     - a   -> append
     - o   -> new line
 
+- 分支(branch)
+  - git branch, 查看分支
+  - git branch 分支名稱, 創建分支
+  - git checkout 分支名稱, 切換到分支
+  - git branch -D 分支名稱, 刪除分支(不能夠在當前分支刪除自己)
+  - 在master使用git log查看紀錄會看不到其他分支的log
+  - git checkout -b 分支名稱, 建立&切換分支一次完成
+  - git branch -m 舊分支名稱 新分支名稱, 修改分支名稱
 
-- last viewed 2:46
+- git checkout
+  - git checkout commit-
+
+- last viewed lesson 2
 
 - VsCode
   - 檢視隱藏目錄
@@ -112,4 +138,5 @@
   - 調整字型大小  
     - Files -> Preferences -> Settings -> 搜尋'Fonts'
   - 使用'滑鼠滾輪 + Ctrl'縮放字體大小
-    -
+  - 打開終端機
+    -選擇Terminal - > New Terminal
