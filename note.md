@@ -161,13 +161,26 @@
     - git reflog
       - git reset (checkout) commit-object, 恢復commit
 
-- last viewed lesson 2 02:24:42
+- 使用.gitignore來選擇不要進行追蹤的檔案
+  - 1.jpg, 直接指定檔名
+  - *.pdf, 所有此副檔名的檔案
+  - pdf/, 此資料夾下的所有檔案
+
+- last viewed lesson 3
 
 - GitHub
   - git remote add origin https://github.com/pylin0219/git-demo.git, 將檔案與GitHub同步
   - git remote -v
     - 檢視目前所有遠端url
-  - git push -u origin master ,上傳
+  - git remote show origin
+    - 印出遠端倉庫資訊
+  - git remote remove origin
+    - 移除遠端origin
+  - 加入不需要控管的檔案
+    - .gitignore
+  - git push -u origin master ,第一次上傳
+    - git push -u dev, 上傳分支
+    - git push, 後續的上傳
 
 - VsCode
   - 檢視隱藏目錄
