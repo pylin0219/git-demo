@@ -32,6 +32,7 @@
   
   - 將檔案加入暫存區 Working directory -> Staging Area(index)
     - git add note.md (檔案名稱左側顯示'U'代表'Untracked', 控管檔案進入暫存區後顯示'A', 代表'Index Added, 'M'代表'Modified')
+      - git add note.md & .readme.md, 加入不同檔案到暫存區
     - git add . 一次加入所有檔案到暫存區
     - 加入暫存區後, '.git/'資料夾下的'objects'中會產生一個對應的資料夾及檔案, 用於回溯檔案紀錄
     - 檔案為將原始碼編譯成sha1格式的object, 例如'f28190'(組成為2碼資料夾名稱+檔案名稱前4碼)
@@ -166,7 +167,7 @@
   - *.pdf, 所有此副檔名的檔案
   - pdf/, 此資料夾下的所有檔案
 
-- last viewed lesson 3
+- last viewed lesson 3, 00:25:51
 
 - GitHub
   - git remote add origin https://github.com/pylin0219/git-demo.git, 將檔案與GitHub同步
@@ -180,7 +181,7 @@
     - .gitignore
   - git push -u origin master ,第一次上傳
     - git push -u dev, 上傳分支
-    - git push, 後續的上傳
+    - git push, 將本地資料上傳到遠端
 
 - VsCode
   - 檢視隱藏目錄
