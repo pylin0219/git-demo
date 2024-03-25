@@ -82,7 +82,7 @@
 
   - 修改最後一次的commit
     - Message寫錯
-    - git commit --amend
+    - git commit --amend, 可以不用因為commit錯誤或是一點點修改而提交多個commit
     - 不會重新提交新的commit
     - 使用Vim的方式編輯
 
@@ -167,7 +167,7 @@
   - *.pdf, 所有此副檔名的檔案
   - pdf/, 此資料夾下的所有檔案
 
-- last viewed lesson 3, 00:25:51
+- last viewed lesson 3, 00:57:16
 
 - GitHub
   - git remote add origin https://github.com/pylin0219/git-demo.git, 將檔案與GitHub同步
@@ -179,9 +179,13 @@
     - 移除遠端origin
   - 加入不需要控管的檔案
     - .gitignore
-  - git push -u origin master ,第一次上傳
+  - git push -u origin master ,第一次上傳, 等效於git push --set-upstream origin master
+    - -u, 代表--set-upstream, 第一次上傳 
     - git push -u dev, 上傳分支
     - git push, 將本地資料上傳到遠端
+    - git commit --amend, 修改最近一次的commit
+      - git push -f, 不管衝突直接覆蓋, 因為修改而造成本地與遠端不同, git push時提示rejected, 可以使用此指令
+  - git pull
 
 - VsCode
   - 檢視隱藏目錄
