@@ -167,7 +167,7 @@
   - *.pdf, 所有此副檔名的檔案
   - pdf/, 此資料夾下的所有檔案
 
-- last viewed lesson 3, 00:57:16
+- last viewed lesson 3, 00:59:16
 
 - GitHub
   - git remote add origin https://github.com/pylin0219/git-demo.git, 將檔案與GitHub同步
